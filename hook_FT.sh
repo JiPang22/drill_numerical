@@ -18,7 +18,7 @@ tmux new-window -t $session:$window -n 'plot2'
 tmux send-keys -t $session:$window 'xmgrace vx' C-m
 
 window=3
-tmux new-window t $session:$window -n 'plot3'
+tmux new-window -t $session:$window -n 'plot3'
 tmux send-keys -t $session:$window 'xmgrace xw' C-m
 
 tmux attach-session -t $session
