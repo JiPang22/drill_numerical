@@ -20,11 +20,12 @@ x = x + dx * dt; v = v + dv * dt
 enddo
 
 do n = 1, nmax ! n is omega index number
-write(4,*) n * d_om, sqrt(sum_im**2 + sum_re**2)
+sum_re = 0.; sum_im = 0.
 do k = 1, kmax ! k is sumation loop index number 
 sum_re = sum_re + x_t(k) * cos(n * d_om * k * dt) * dt
 sum_im = sum_im -x_t(k) * sin(n * d_om * k * dt) * dt
 enddo
+write(4,*) n * d_om, sqrt(sum_im**2 + sum_re**2)
 print*, "step... ", n
 enddo
 
